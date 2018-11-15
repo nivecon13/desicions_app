@@ -1,0 +1,44 @@
+Django notes
+
+start project
+	cmd: navigate to desired folder 
+	cmd: django-admin startproject 'project name here'
+	basic structure
+		mysite/
+		manage.py
+		mysite/
+			__init__.py
+			settings.py
+			urls.py
+			wsgi.py
+
+Start app
+	cmd: navigate to desired folder 
+	cmd: python manage.py startapp 'app name here'
+	basic structure
+		polls/
+		__init__.py
+		admin.py
+		apps.py
+		migrations/
+			__init__.py
+		models.py
+		tests.py
+		views.py - this is the response
+		urls.py - this is the table of contents, all urls must be mapped
+			django looks from top bottom in irls pattern
+			
+models/migrate aka database actions
+	cmd: python manage.py makemigrations 'app name here'
+	cmd: python manage.py sqlmigrate 'app name + migration #' - shows sql
+	cdm: python manage.py migrate - committ migration to db
+		Change your models (in models.py).
+		Run python manage.py makemigrations to create migrations for those changes
+		Run python manage.py migrate to apply those changes to the database.
+	
+views
+	views by web page type.
+	view return a HTTP response or a 404 exception
+	views must be wired into the .url patters for access
+	
+onclick="location.href='{% url 'polls:decisionresults' pk %}'"
