@@ -5,8 +5,10 @@ from django.utils import timezone
 class Decision(models.Model):
     username = models.CharField(max_length=30, default='Anonymous')
     question = models.CharField(max_length=255, default='Unknown')
-    option_1 = models.CharField(max_length=255)
-    option_2 = models.CharField(max_length=255)
+    option_1 = models.CharField(max_length=255, default='')
+    option_2 = models.CharField(max_length=255, default='')
+    option_3 = models.CharField(max_length=255, default='')
+    option_4 = models.CharField(max_length=255, default='')
     decision_made = models.IntegerField(default=0)
     pub_date = models.DateTimeField('date published')
 

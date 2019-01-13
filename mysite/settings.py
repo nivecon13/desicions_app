@@ -25,13 +25,14 @@ SECRET_KEY = '@zy@1o2gl08wf_^)tat18bzul)af3v*mwwm)4c+u26^x1*g$u3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.0.0.7', '127.0.0.1']
+ALLOWED_HOSTS = ['10.0.0.7', '127.0.0.1', 'desthis.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'bootstrap4',
+    'food.apps.FoodConfig',
     'decisions.apps.DecisionsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -132,5 +133,8 @@ DATABASES['default'].update(db_from_env)
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# The URL to use when referring to static files (where they will be served from)
-STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'static/'),
+
+)
+

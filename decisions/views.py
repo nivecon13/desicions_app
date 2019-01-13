@@ -30,10 +30,15 @@ def get_choices(request):
         form = DecisionForm()
     return render(request, 'decisions/choices.html', {'form': form})
 
-class ResultsView(generic.DetailView):
-    model = Decision
+# class ResultsView(generic.DetailView):
+#     model = Decision
+#     template_name = 'decisions/result.html'
+#     context_object_name = 'decision'
+
+def ResultsView(request, pk):
     template_name = 'decisions/result.html'
-    context_object_name = 'decision'
+    decision = get_object_or_404(Decision, id=pk)
+    return render(request, template_name, {'decision': decision})
 
 def DesicionsView(request):
     latest_decisions_list = Decision.objects.order_by('-pub_date')[:5]

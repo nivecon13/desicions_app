@@ -13,6 +13,9 @@
           <h1 class="mt-2">Decisions Decisions</h1>
           <hr class="mt-0 mb-4">
           {% block content %}
+          {% load staticfiles %}
+            <script src="{% static "js/jquery.js" %}"></script>
+            <script src="{% static "js/rango-jquery.js" %}"></script>
           {# Load the tag library #}
           {% load bootstrap4 %}
 

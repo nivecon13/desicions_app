@@ -9,5 +9,5 @@ urlpatterns = [
     path('choices', views.get_choices, name='choices'),
     path('decisions', views.DesicionsView, name='decisions'),
     path('all', views.DecisionsAll, name='all'),
-    path('<int:pk>/result', views.ResultsView.as_view(), name='result')
+    path('<int:pk>/result', views.ResultsView, name='result')
 ]
