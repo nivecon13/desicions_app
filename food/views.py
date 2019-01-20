@@ -21,7 +21,7 @@ def NewRestaurantView(request):
                 would_come_again=form.cleaned_data['would_come_again_text'],
                 )
             r.save()
-            return HttpResponseRedirect(reverse('NewRestaurant'))
+            return HttpResponseRedirect(reverse('decisions:choices'))
     else:
         form = forms.RestaurantForm()
         latest_restaurants = models.Restaurants.objects.order_by('-when_we_ate')
